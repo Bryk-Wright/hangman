@@ -21,7 +21,6 @@ while LIVES < 6:
     FOUND = False
     WIN = False
     guess = input("Guess a letter! ").lower()
-    print("Previous guesses")
 
     for index, letter in enumerate(chosen_word):
         if guess == letter and not guess in prev_guesses:
@@ -38,9 +37,10 @@ while LIVES < 6:
         WIN = False
 
     if WIN is True:
-        print("You won!")
+        print(f"You won! The word was {chosen_word}")
         quit()
 
+    print("Previous guesses")
     print(*prev_guesses)
     prev_guesses.append(guess)
     print(man.progress[LIVES])
